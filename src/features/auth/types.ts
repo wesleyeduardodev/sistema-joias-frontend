@@ -1,3 +1,5 @@
+import type { User } from '@/types';
+
 export interface RegistroData {
   nome: string;
   email: string;
@@ -9,4 +11,5 @@ export interface RegistroData {
 export interface LoginResponse {
   accessToken: string;
   refreshToken: string;
+  usuario: User;
 }

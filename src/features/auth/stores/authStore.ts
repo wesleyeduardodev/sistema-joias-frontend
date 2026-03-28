@@ -34,10 +34,9 @@ export const useAuthStore = create<AuthState>()(
           set({
             accessToken: data.accessToken,
             refreshToken: data.refreshToken,
+            user: data.usuario,
             isAuthenticated: true,
           });
-          // Fetch user info
-          await get().fetchUser();
         } finally {
           set({ isLoading: false });
         }

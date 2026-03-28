@@ -1,10 +1,12 @@
 export interface User {
-  id: number;
+  id: string;
   nome: string;
   email: string;
-  role: 'ADMIN' | 'VENDEDOR' | 'REPRESENTANTE';
+  role: 'ADMIN' | 'GERENTE' | 'VENDEDOR' | 'REPRESENTANTE';
+  telefone?: string;
+  cpf?: string;
   ativo: boolean;
-  criadoEm: string;
+  percentualComissaoPadrao?: number;
 }
 
 export interface ApiError {

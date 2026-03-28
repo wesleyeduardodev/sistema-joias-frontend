@@ -7,6 +7,17 @@ import { AuthGuard } from '@/features/auth/components/AuthGuard';
 import { AppShell } from '@/components/layout/AppShell';
 import { PlaceholderPage } from '@/components/feedback/PlaceholderPage';
 
+import { CatalogoListagem } from '@/features/catalogo/pages/CatalogoListagem';
+import { CatalogoNovo } from '@/features/catalogo/pages/CatalogoNovo';
+import { CatalogoDetalhes } from '@/features/catalogo/pages/CatalogoDetalhes';
+import { CatalogoEditar } from '@/features/catalogo/pages/CatalogoEditar';
+
+import { EstoqueVisaoGeral } from '@/features/estoque/pages/EstoqueVisaoGeral';
+import { EstoqueMovimentacoes } from '@/features/estoque/pages/EstoqueMovimentacoes';
+import { EstoqueInventario } from '@/features/estoque/pages/EstoqueInventario';
+
+import { CotacoesConfig } from '@/features/cotacao/pages/CotacoesConfig';
+
 export function AppRoutes() {
   return (
     <Routes>
@@ -25,8 +36,22 @@ export function AppRoutes() {
         }
       >
         <Route path="/" element={<PlaceholderPage />} />
-        <Route path="/catalogo" element={<PlaceholderPage />} />
-        <Route path="/estoque" element={<PlaceholderPage />} />
+
+        {/* Catalogo */}
+        <Route path="/catalogo" element={<CatalogoListagem />} />
+        <Route path="/catalogo/novo" element={<CatalogoNovo />} />
+        <Route path="/catalogo/:id" element={<CatalogoDetalhes />} />
+        <Route path="/catalogo/:id/editar" element={<CatalogoEditar />} />
+
+        {/* Estoque */}
+        <Route path="/estoque" element={<EstoqueVisaoGeral />} />
+        <Route path="/estoque/movimentacoes" element={<EstoqueMovimentacoes />} />
+        <Route path="/estoque/inventario" element={<EstoqueInventario />} />
+
+        {/* Configuracoes */}
+        <Route path="/configuracoes/cotacoes" element={<CotacoesConfig />} />
+
+        {/* Placeholder routes */}
         <Route path="/vendas" element={<PlaceholderPage />} />
         <Route path="/consignacao" element={<PlaceholderPage />} />
         <Route path="/representantes" element={<PlaceholderPage />} />
